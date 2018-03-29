@@ -1,18 +1,219 @@
----
-	layout: default
-	title: 我的Blog
----
-
-　　<h2>{{ page.title }}</h2>
-
-　　<p>最新文章</p>
-
-　　<ul>
-
-　　　　{% for post in site.posts %}
-
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-　　　　{% endfor %}
-
-　　</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Futing's Resume</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-weight: lighter;
+		}
+		body{
+			background: #E0E0E0;
+		}
+		.clearfix{
+			*zoom:1;
+		}
+		.clearfix:after{
+			content: '\200B';
+			display: block;
+			height: 0;
+			clear: both;
+		}
+		.container{
+			margin: 15px auto; 
+			padding: 40px;
+			width: 80%;
+			background: #fff;
+			border:1px solid #ccc;
+		}
+		@media screen and (min-width:1200px) {
+			.container{
+				width: 1000px;
+			}
+		}
+		.container a{
+			color: #4db6ac;
+			text-decoration: none;
+		}
+		.leftside{
+			float: left;
+			width: 18%;
+		}
+		.myPic{
+			text-align: center;
+		}
+		.myPic img{
+			display: block;
+			margin: auto;
+			width: 120px;
+			height: 150px;
+		}
+		.name{
+			padding: 15px 0;
+			font-size: 20px;
+			font-weight: normal;
+		} 
+		.leftCont dl{
+			margin-top: 50px;
+		}
+		.leftCont dt{
+			line-height: 40px;
+			font-size: 18px;
+			color: #00796b;
+		}
+		.leftCont dd{
+			margin-bottom: 10px;
+			font-size: 14px;
+			line-height: 20px;
+			color: #131212;
+			font-weight: lighter;
+		}
+		.title{
+			margin-bottom: 20px;
+			font-size: 22px;
+			color: #00796b;
+			line-height: 55px;
+			font-weight: lighter;
+			border-bottom: 1px solid #00796b;
+		}
+		.mainCont{
+			box-sizing: border-box;
+			float: left;
+			padding: 10px 50px;
+			width: 82%;
+		}
+		.infoBox .details{
+			padding-left: 50px;
+		}
+		.infoBox .details p{
+			font-size: 16px;
+			font-weight: lighter;
+			line-height: 30px;
+		}
+		.w200{
+			display: inline-block;
+			width: 200px;
+		}
+		.infoBox ul{
+			padding-left: 68px;
+		}
+		.infoBox ul li{
+			line-height: 36px;
+		}
+		.ewm{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+		}
+		.vtm{
+			vertical-align: middle;
+		}
+		.rel{
+			position: relative;
+		}
+		.ewmB{
+			display: none;
+			position: absolute;
+			left: 100px;
+			top: 0;
+			width: 120px;
+			height: 120px;
+			padding:5px;
+			background: #fff;
+			z-index: 999;
+		}
+		.ewm:hover + .ewmB{
+			display: inline-block;
+		}
+		.projectTit{
+			margin-top: 15px;
+			font-size: 18px;
+			padding-left: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container clearfix">
+		<div class="leftside">
+			<div class="myPic">
+				<img src="./img/avatar.png" alt="">
+				<h1 class="name">Fu Ting</h1>
+			</div>
+			<div class="leftCont">
+				<dl>
+					<dt>应聘岗位</dt>
+					<dd>Web前端工程师</dd>
+				</dl>
+				<dl>
+					<dt>联系方式</dt>
+					<dd>Tel:18638601250</dd>
+					<dd>Github:github.com/nicefuting</dd>
+					<dd>Email:741289818@qq.com</dd>
+				</dl>
+				<dl>
+					<dt>教育背景</dt>
+					<dd>河南中医药大学</dd>
+				</dl>
+				<dl>
+					<dt>兴趣爱好</dt>
+					<dd>喜欢尝试新鲜的事物</dd>
+					<dd>对新技术保持有热情</dd>
+					<dd>喜欢看书和电影</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="mainCont">
+			<section class="infoBox">
+				<h1 class="title">教育背景</h1>
+				<div class="details">
+					<p><span class="w200">河南中医药大学</span><span class="remark">本科(2010-2014)</span></p>
+					<p><span class="w200">信息技术学院</span><span class="remark">计算机科学与技术专业</span></p>
+					<p>Github:<a href="https://github.com/nicefuting">https://github.com/nicefuting</a></p>
+					<p class="rel"><span class="vtm">WeChat:&nbsp;</span><img src="./img/ewmS.png" alt="" class="ewm vtm"><img src="./img/ewm.png" alt="" class="ewmB"></p>
+				</div>
+			</section>
+			<section class="infoBox">
+				<h1 class="title">工作经验</h1>
+				<div>
+					<p class="projectTit">河南小雨点网络科技有限公司</p>
+					<ul>
+						<li>辰信投资官网</li>
+						<li>摇钱树股票配资</li>
+					</ul>
+				</div>
+				<div>
+					<p class="projectTit">郑州安久信息技术有限公司</p>
+					<ul>
+						<li>天蔻海购</li>
+						<li>一人食</li>
+						<li>益爱海蓓教育有限公司</li>
+					</ul>
+				</div>
+				<div>
+					<p class="projectTit">河南恒品文化传播有限公司</p>
+					<ul>
+						<li>河南恒品有限公司官网</li>
+						<li>戏缘商城PC版和移动版</li>
+						<li>北京遇鉴官网</li>
+						<li>戏缘App</li>
+						<li>遇鉴App</li>
+					</ul>
+				</div>
+			</section>
+			<section class="infoBox">
+				<h1 class="title">个人技能</h1>
+				<ul>
+					<li>熟练掌握HTML,CSS,JavaScript的语法</li>
+					<li>熟练掌握移动端H5开发，熟悉主流浏览器特性</li>
+					<li>熟练使用VUE,Webpack开发SPA,熟练使用JQuery,Zepto,Framework,Bootstrap等框架</li>
+					<li>对原生App有一定了解,对React Native，Ionic等Hybird框架有一定的了解</li>
+					<li>了解Nodejs,关注前端技术的发展</li>
+					<li>熟练使用Photoshop,Axure等工具</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
